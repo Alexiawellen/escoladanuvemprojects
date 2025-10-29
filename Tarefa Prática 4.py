@@ -32,7 +32,7 @@ while True:
 print("~~~~~~~~~~~~~~~~~~~~")
 
 # Atividade 2: Registro de notas e cálculo da média
-print("~~~~~~~~~~~~~~~~~~~~")
+
 notas = []
 print("Digite as notas (0 a 10). Digite 'fim' para encerrar.")
 
