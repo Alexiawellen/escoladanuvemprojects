@@ -29,12 +29,21 @@ print("~~~~~~~~~~~~~~~~~~~~")
 
 # Atividade 3: Calculadora de IMC
 
-peso = float(input("Digite o peso em kg: ")) # lê o peso como número decimal
-altura = float(input("Digite a altura em metros: ")) # lê a altura como número decimal
+peso = float(input("Digite seu peso em kg: "))
+altura = float(input("Digite sua altura em metros: "))
 
-imc = peso / (altura ** 2) # calcula o IMC
-
-print("IMC =", round(imc, 2)) # imprime o resultado com 2 casas decimais
+imc = peso / (altura ** 2)
+if imc < 18.5:
+    classificacao = "Abaixo do peso"
+elif imc < 25:
+    classificacao = "Peso normal"
+elif imc < 30:
+    classificacao = "Sobrepeso"
+else:
+    classificacao = "Obeso"
+    
+print("IMC: {:.2f}".format(imc))
+print("Classificação: {}".format(classificacao))
 print("~~~~~~~~~~~~~~~~~~~~")
 
 # Atividade 4: Conversor de Temperatura
