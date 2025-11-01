@@ -48,12 +48,66 @@ print("~~~~~~~~~~~~~~~~~~~~")
 
 # Atividade 4: Conversor de Temperatura
 
-celsius = float(input("Digite a temperatura em Celsius: ")) # lê a temperatura em Celsius
-fahrenheit = (celsius * 9/5) + 32 # converte para Fahrenheit
-kelvin = celsius + 273.15 # converte para Kelvin
+# Conversão Celsius
+def celsius_to_fahrenheit(c):
+    fahrenheit = (c * 9/5) + 32
+    return print(round(fahrenheit, 1))
 
-print("Fahrenheit =", round(fahrenheit, 2)) # imprime Fahrenheit
-print("Kelvin =", round(kelvin, 2)) # imprime Kelvin
+def celsius_to_kelvin(c):
+    kelvin = c + 273.15
+    return print(round(kelvin, 2))
+
+# Conversão Fahrenheit
+def fahrenheit_to_celsius(f):
+    celsius = (f - 32) * 5/9
+    return print(round(celsius, 2))
+
+def fahrenheit_to_kelvin(f):
+    kelvin = ((f - 32) * 5/9) + 273.15
+    return print(round(kelvin, 2))
+
+# Conversão Kelvin
+def kelvin_to_celsius(k):
+    celsius = k - 273.15
+    return print(round(celsius, 2))
+
+def kelvin_to_fahrenheit(k):
+    fahrenheit = ((k - 273.15) * 9/5) + 32
+    return print(round(fahrenheit, 2))
+
+
+# Programa principal
+temperatura = float(input("Informe a temperatura: "))
+unidade_origem = input("Informe a origem: Celsius(1), Fahrenheit(2), Kelvin(3): ")
+unidade_destino = input("Informe o destino: Celsius(1), Fahrenheit(2), Kelvin(3): ")
+valores_validos = ["1", "2", "3"]
+
+if unidade_origem not in valores_validos or unidade_destino not in valores_validos:
+    print("Unidade inválida. Use 1, 2 ou 3")
+
+elif unidade_origem == unidade_destino:
+    print("As unidades são iguais. Nenhuma conversão necessária.")
+
+# Celsius
+elif unidade_origem == "1":
+    if unidade_destino == "2":
+        celsius_to_fahrenheit(temperatura)
+    elif unidade_destino == "3":
+        celsius_to_kelvin(temperatura)
+
+# Fahrenheit
+elif unidade_origem == "2":
+    if unidade_destino == "1":
+        fahrenheit_to_celsius(temperatura)
+    elif unidade_destino == "3":
+        fahrenheit_to_kelvin(temperatura)
+
+# Kelvin
+elif unidade_origem == "3":
+    if unidade_destino == "1":
+        kelvin_to_celsius(temperatura)
+    elif unidade_destino == "2":
+        kelvin_to_fahrenheit(temperatura)
 print("~~~~~~~~~~~~~~~~~~~~")
 
 # Atividade 5: Verificador de Ano Bissexto
